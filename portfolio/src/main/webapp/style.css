@@ -27,8 +27,22 @@ img.floatLeft{
     margin-bottom: 20px;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.heading{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: skyblue;
+}
+
+#content {
+    margin: 30px 100px 50px 100px;
+    font-family: sans-serif;
+    color: #202020;
+}
+
+#projects-content{
+    margin-bottom: 50px;
 }
 
 nav {
