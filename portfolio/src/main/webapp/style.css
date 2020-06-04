@@ -57,6 +57,27 @@ img.floatLeft{
     text-align: center;
 }
 
+.column {
+    text-align: justify;
+}
+
+.column img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+div.column:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+#gallery-grid {
+    margin: auto;
+    width: 650px;
+}
+
 nav {
     font-size: 100%;
     margin: 0;
