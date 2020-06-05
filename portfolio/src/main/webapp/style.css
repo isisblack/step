@@ -32,7 +32,7 @@ img.floatLeft{
     margin-right: 100px;
     margin-top: 50px;
     margin-bottom: 50px;
-    color: skyblue;
+    color: #87CEEB;
 }
 
 #content {
@@ -54,7 +54,7 @@ nav {
 nav ul{
     list-style: none;
     padding: 0;
-    background: black;
+    background: #000000;
     display: flex;
 }
  
@@ -73,5 +73,5 @@ nav ul li a{
 }
  
 nav ul li a:hover{
-    color: skyblue;
+    color: #87CEEB;
 }
