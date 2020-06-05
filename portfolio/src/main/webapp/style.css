@@ -7,3 +7,34 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+nav {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+ 
+nav ul{
+    list-style: none;
+    padding: 0;
+    background: black;
+    display: flex;
+}
+ 
+nav ul li{
+    border-bottom: none;
+}
+ 
+nav ul li a{
+    float: right;
+    color: #ddd;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    align-items: center;
+    font-family: arial;
+}
+ 
+nav ul li a:hover{
+    color: skyblue;
+}
