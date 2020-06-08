@@ -41,7 +41,7 @@ img.floatLeft{
     color: #202020;
 }
 
-#blog-content{
+.blog-content{
     margin: 30px 100px 30px 100px;
     font-family: sans-serif;
     color: #202020;
