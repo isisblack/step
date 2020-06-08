@@ -35,7 +35,7 @@ img.floatLeft{
     color: skyblue;
 }
 
-#content {
+.content {
     margin: 30px 100px 50px 100px;
     font-family: sans-serif;
     color: #202020;
