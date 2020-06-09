@@ -35,10 +35,18 @@ img.floatLeft{
     color: #87CEEB;
 }
 
-#content {
+.content {
     margin: 30px 100px 50px 100px;
     font-family: sans-serif;
     color: #202020;
+}
+
+.blog-content{
+    margin: 30px 100px 30px 100px;
+    font-family: sans-serif;
+    color: #202020;
+    border: 1px solid #000000;
+    padding: 20px 30px 20px 30px;
 }
 
 #projects-content{
