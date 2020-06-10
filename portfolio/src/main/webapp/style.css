@@ -57,6 +57,22 @@ img.floatLeft{
     text-align: center;
 }
 
+#gallery-heading{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #87CEEB;
+}
+
+#gallery-paragraph{
+    margin: auto;
+    width: 650px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
 .column {
     text-align: justify;
 }
