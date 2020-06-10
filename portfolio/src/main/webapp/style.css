@@ -53,6 +53,47 @@ img.floatLeft{
     margin-bottom: 50px;
 }
 
+#center{
+    text-align: center;
+}
+
+#gallery-heading{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #87CEEB;
+}
+
+#gallery-paragraph{
+    margin: auto;
+    width: 650px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.column {
+    text-align: justify;
+}
+
+.column img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+div.column:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+#gallery-grid {
+    margin: auto;
+    width: 650px;
+}
+
 nav {
     font-size: 100%;
     margin: 0;
