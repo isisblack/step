@@ -16,7 +16,6 @@
  * Fetches content of /data from the server and adds it to the DOM.
  */
 function getData() {
-  console.log('Fetching data.');
 
   const responsePromise = fetch('/data');
 
@@ -28,7 +27,6 @@ function getData() {
  * addDataToDom().
  */
 function handleResponse(response) {
-  console.log('Handling the response.');
 
   const textPromise = response.text();
 
@@ -37,8 +35,8 @@ function handleResponse(response) {
 
 /** Adds data to the DOM. */
 function addDataToDom(data) {
-  console.log('Adding data to dom: ' + data);
 
   const dataContainer = document.getElementById('data-container');
+  
   dataContainer.innerText = data;
 }
