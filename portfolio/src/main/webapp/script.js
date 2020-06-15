@@ -40,3 +40,22 @@ function addDataToDom(data) {
   
   dataContainer.innerText = data;
 }
+
+function getComments(){
+    fetch('/data').then(response => response.json()).then((comments) => {
+     const statsListElement = document.getElementById('data-container');
+     statsListElement.innerHTML = '';
+     statsListElement.appendChild(
+        createListElement('Comment 1: ' + comments[0]));
+     statsListElement.appendChild(
+        createListElement('Comment 2: ' + comments[1]));
+     statsListElement.appendChild(
+        createListElement('Comment 3: ' + comments[2]));
+  });
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
