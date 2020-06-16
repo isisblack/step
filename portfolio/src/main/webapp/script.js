@@ -16,9 +16,7 @@
  * Fetches content of /data from the server and adds it to the DOM.
  */
 function getData() {
-
   const responsePromise = fetch('/data');
-
   responsePromise.then(handleResponse);
 }
 
@@ -27,17 +25,13 @@ function getData() {
  * addDataToDom().
  */
 function handleResponse(response) {
-
   const textPromise = response.text();
-
   textPromise.then(addDataToDom);
 }
 
 /** Adds data to the DOM. */
 function addDataToDom(data) {
-
   const dataContainer = document.getElementById('data-container');
-  
   dataContainer.innerText = data;
 }
 
