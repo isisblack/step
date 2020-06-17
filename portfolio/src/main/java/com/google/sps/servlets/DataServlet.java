@@ -17,6 +17,9 @@ package com.google.sps.servlets;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.Gson;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,16 +30,43 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet { 
 
+  ArrayList<String> comments = new ArrayList<String>();
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    ArrayList<String> comments = new ArrayList<String>();
-    comments.add("Hello");
-    comments.add("What's up?");
-    comments.add("Good Morning");
-
-    String json =convertToJsonUsingGson(comments);
+    String json = convertToJsonUsingGson(comments);
     response.setContentType("application/json;");
     response.getWriter().println(json);
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get the input from the form.
+    String text = getParameter(request, "text-input", "");
+    comments.add(text);
+
+    // Datastore
+    long timestamp = System.currentTimeMillis();
+
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("text", text);
+    commentEntity.setProperty("timestamp", timestamp);
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(commentEntity);
+
+    // Respond with the result
+    response.setContentType("text/html;");
+    response.getWriter().println(comments);
+    response.sendRedirect("/blog.html");
+  }
+
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
   }
 
   private String convertToJsonUsingGson(List<String> comments) {
