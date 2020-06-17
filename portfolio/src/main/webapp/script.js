@@ -39,12 +39,10 @@ function getComments(){
     fetch('/data').then(response => response.json()).then((comments) => {
      const statsListElement = document.getElementById('data-container');
      statsListElement.innerHTML = '';
-     statsListElement.appendChild(
-        createListElement('Comment 1: ' + comments[0]));
-     statsListElement.appendChild(
-        createListElement('Comment 2: ' + comments[1]));
-     statsListElement.appendChild(
-        createListElement('Comment 3: ' + comments[2]));
+     comments.forEach((comment, index) => {
+        statsListElement.appendChild(
+            createListElement('Comment ' + (index + 1) + ': ' + comments[index]));
+     });
   });
 }
 
