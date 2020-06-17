@@ -16,9 +16,7 @@
  * Fetches content of /data from the server and adds it to the DOM.
  */
 function getData() {
-
   const responsePromise = fetch('/data');
-
   responsePromise.then(handleResponse);
 }
 
@@ -27,17 +25,13 @@ function getData() {
  * addDataToDom().
  */
 function handleResponse(response) {
-
   const textPromise = response.text();
-
   textPromise.then(addDataToDom);
 }
 
 /** Adds data to the DOM. */
 function addDataToDom(data) {
-
   const dataContainer = document.getElementById('data-container');
-  
   dataContainer.innerText = data;
 }
 
@@ -45,12 +39,10 @@ function getComments(){
     fetch('/data').then(response => response.json()).then((comments) => {
      const statsListElement = document.getElementById('data-container');
      statsListElement.innerHTML = '';
-     statsListElement.appendChild(
-        createListElement('Comment 1: ' + comments[0]));
-     statsListElement.appendChild(
-        createListElement('Comment 2: ' + comments[1]));
-     statsListElement.appendChild(
-        createListElement('Comment 3: ' + comments[2]));
+     comments.forEach((comment, index) => {
+        statsListElement.appendChild(
+            createListElement('Comment ' + (index + 1) + ': ' + comments[index]));
+     });
   });
 }
 
